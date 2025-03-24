@@ -1,0 +1,46 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: ksp-core-software-dep-mitre
+  namespace: oai-core
+spec:
+  action: Block
+  message: "An attacker can breach container boundaries and gain access to the host machine"
+  process:
+    matchPaths:
+      - path: /bin/apt
+      - path: /bin/apt-get
+      - path: /bin/curl
+      - path: /bin/dnf
+      - path: /bin/dpkg
+      - path: /bin/gdebi
+      - path: /bin/make
+      - path: /bin/makepkg
+      - path: /bin/pacman
+      - path: /bin/rpm
+      - path: /bin/wget
+      - path: /bin/yaourt
+      - path: /bin/yum
+      - path: /bin/zypper
+      - path: /sbin/apk
+      - path: /sbin/makepkg
+      - path: /sbin/pacman
+      - path: /sbin/yaourt
+      - path: /usr/bin/apt
+      - path: /usr/bin/apt-get
+      - path: /usr/bin/curl
+      - path: /usr/bin/dnf
+      - path: /usr/bin/dpkg
+      - path: /usr/bin/gdebi
+      - path: /usr/bin/make
+      - path: /usr/bin/makepkg
+      - path: /usr/bin/pacman
+      - path: /usr/bin/rpm
+      - path: /usr/bin/wget
+      - path: /usr/bin/yaourt
+      - path: /usr/bin/yum
+      - path: /usr/bin/zypper
+      - path: /usr/local/bin/curl
+      - path: /usr/sbin/makepkg
+      - path: /usr/sbin/pacman
+      - path: /usr/sbin/yaourt

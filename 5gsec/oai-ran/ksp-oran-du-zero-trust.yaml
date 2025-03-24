@@ -22,6 +22,9 @@ spec:
     - path: /opt/oai-gnb/etc/gnb.conf
       fromSource:
       - path: /opt/oai-gnb/bin/nr-softmodem
+    - path: /opt/oai-gnb/nrMAC_stats.log
+      fromSource:
+      - path: /opt/oai-gnb/bin/nr-softmodem
       
       
   network:
