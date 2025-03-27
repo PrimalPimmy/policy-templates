@@ -3,6 +3,7 @@ kind: NetworkPolicy
 metadata:
   name: netpol-oran-du
   namespace: oran-ran-du
+spec:
   podSelector:
     matchLabels: 
       app.kubernetes.io/name: oai-gnb-du # Applies to pods with label 'app=pod1'
