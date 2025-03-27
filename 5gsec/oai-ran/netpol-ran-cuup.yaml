@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: netpol-ran-cuup
+  namespace: oai-ran-cuup
+spec:
+  podSelector:
+    matchLabels: 
+      app.kubernetes.io/name: oai-gnb-cu-up # Applies to pods with label 'app=pod1'
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: oai-gnb-du # Allows traffic to pods with label 'app=pod2'
+    ports:
+    - protocol: TCP
+      port: 80
+    - protocol: UDP
+      port: 8085  # n4
